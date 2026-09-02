@@ -1,19 +1,27 @@
-const API_URL = "http://localhost:5000";
+// const API_URL = "http://localhost:5000";
+const API_URL =
+    window.location.port === "5501"
+        ? "http://localhost:5000"
+        : "";
+// const API_URL = "";
 
 // Get all categories
-async function getCategories() {
+export async function getCategories() {
     try {
         const response = await fetch(`${API_URL}/api/categories`);
+        // const response = await fetch(`/api/categories`);
 
-        const data = await response.json();
+        const result = await response.json();
 
-        console.log("Categories Response:", data);
+        console.log("Categories Response:", result);
+        if (result.success) {
+            return result.data;
+        }
 
-        return data;
+        return [];
 
     } catch (error) {
         console.error("API Error:", error);
+        return [];
     }
 }
-
-getCategories();

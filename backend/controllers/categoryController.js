@@ -4,7 +4,7 @@ const db = require("../config/db");
 const getCategories = async (req, res) => {
     try {
         const [rows] = await db.query (
-            "SELECT *FROM categories ORDER BY category_id DESC"
+            "SELECT * FROM categories ORDER BY category_id ASC"
         );
         res.json({
             success: true,

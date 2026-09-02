@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 const db = require("./config/db");
@@ -53,10 +54,17 @@ app.use("/api/categories", categoryRoutes);
 // Food API
 app.use("/api/food-items", foodRoutes);
 
+// SERVE FRONTEND
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+// Frontend index.html
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
 
 // Server
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Server running on  http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0",  () => {
+    console.log(`Server running on: ${PORT}`);
 });
