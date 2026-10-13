@@ -243,6 +243,195 @@ a{
     animation: spin 1s linear infinite;
 }
 
+.snackbar {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, 100px);
+    min-width: 280px;
+    max-width: 90%;
+    padding: 14px 22px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    z-index: 2000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.snackbar.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+.snackbar-success { background: #198754; }
+.snackbar-error   { background: #dc3545; }
+
+/* Checkout popup header */
+#checkoutModal .modal-content {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden; /* keeps the gradient inside the rounded corners */
+}
+
+#checkoutModal .modal-header {
+    background: linear-gradient(90deg, var(--primary-color, #ff6b35), var(--secondary-color, #f7931e));
+    color: #fff;
+    border-bottom: none;
+    padding: 18px 24px;
+    align-items: center;
+}
+
+#checkoutModal .modal-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+#checkoutModal .modal-title i {
+    margin-right: 6px;
+}
+
+.checkout-close {
+    font-size: 2rem;
+    line-height: 1;
+    color: #fff;
+    text-shadow: none;
+    opacity: 0.8;
+    padding: 0 8px;
+    margin: 0;
+}
+.checkout-close:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+/* Cart item price: orange */
+.cart-item-price {
+    color: #ff6b35;
+    font-weight: 700;
+}
+
+/* Summary block */
+.cart-summary {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e9ecef;
+}
+
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+/* Total row: big, orange, with a line above it */
+.cart-summary-total {
+    margin-top: 6px;
+    padding-top: 14px;
+    border-top: 1px solid #e9ecef;
+    color: #ff6b35;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Checkout button: gradient goes orange-red to orange-yellow */
+.checkout-btn {
+    display: block;
+    margin-top: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.checkout-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+/* Sticky header */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* stays above the cards while scrolling */
+}
+
+/* Wider page (header, menu and footer all use .container) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: #ddd;
+    margin-top: 48px;
+    padding: 40px 0 20px;
+}
+
+.footer-title {
+    color: #ff5722;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #e6e6e6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #ff6b35;
+}
+
+.footer-links i {
+    margin-right: 8px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* Cart icon + login button together on the right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-right #authBar {
+    display: flex;
+    align-items: center;
+}
+
 @keyframes spin {
     100% {
         transform: rotate(360deg);

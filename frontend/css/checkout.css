@@ -1,0 +1,27 @@
+/* Optional: include only if your stylesheet does not already style these classes */
+#checkoutModal .modal-content { border: none; border-radius: 16px; overflow: hidden; }
+#checkoutModal .modal-header {
+    background: linear-gradient(90deg, var(--primary-color, #ff7a2f), var(--secondary-color, #f7931e));
+    color: #fff;
+}
+#checkoutModal .form-control { border: 2px solid #f1c9b2; border-radius: 12px; }
+#checkoutModal .form-control:focus { border-color: var(--primary-color, #e8541e); box-shadow: none; }
+
+.payment-option {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px; margin-bottom: 8px;
+    border: 2px solid #eee; border-radius: 12px; cursor: pointer;
+}
+.payment-option.selected { border-color: var(--primary-color, #e8541e); background: #fff4ec; }
+
+.order-summary-modal { background: #faf6f2; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; }
+.summary-row { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; }
+.summary-row.total {
+    border-top: 1px solid #e5d9cf; margin-top: 6px; padding-top: 10px;
+    font-weight: 700; font-size: 1.1rem;
+}
+
+/* Cart sidebar totals */
+.cart-summary { border-top: 1px solid #ddd; padding-top: 12px; margin-top: 12px; }
+.cart-summary-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.cart-summary-total { font-weight: 700; font-size: 1.1rem; }
